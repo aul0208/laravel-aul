@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kelas;
+use App\Models\guru;
 use Illuminate\Http\Request;
 
 class GuruController extends Controller
@@ -10,15 +10,11 @@ class GuruController extends Controller
     //
     function index()
     {
-        // return '<h1>SAYA GURU dari controller</h1>';
-        // $data=kelas::all();
-        // return $data;
-        $data=kelas::orderBy('id','desc')->paginate(1);
-        return view('kelas/index')->with('data',$data);
+         return '<h1>SAYA GURU dari controller</h1>';
+        
     }
-    function detail($id) {
-        // return "<h1>SAYA GURU dari controller ID $id DENGAN NAMA $nama</h1>";
-        $data=kelas::where('id',$id)->first();
-        return view('kelas/detail')->with('data',$data);
+    function detail($id,$nama) {
+         return "<h1>SAYA GURU dari controller ID $id DENGAN NAMA $nama</h1>";
+    
     }
 }
